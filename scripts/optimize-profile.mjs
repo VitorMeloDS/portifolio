@@ -1,29 +1,35 @@
 import sharp from 'sharp';
-import { renameSync, statSync, unlinkSync } from 'node:fs';
+import { statSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const input = join(root, 'src/assets/images/profile.jpg');
+const source = join(root, 'src/assets/images/profile.jpg');
 const outputDir = join(root, 'src/assets/images');
-const tempJpg = join(outputDir, 'profile.optimized.jpg');
 
-const SIZE = 640;
+const variants = [
+  { width: 320, webp: 'profile-320.webp', jpeg: 'profile-320.jpg' },
+  { width: 640, webp: 'profile-640.webp', jpeg: null },
+];
 
-await sharp(input)
-  .rotate()
-  .resize(SIZE, SIZE, { fit: 'cover', position: 'centre' })
-  .jpeg({ quality: 82, mozjpeg: true })
-  .toFile(tempJpg);
+for (const { width, webp, jpeg } of variants) {
+  await sharp(source)
+    .rotate()
+    .resize(width, width, { fit: 'cover', position: 'centre' })
+    .webp({ quality: 82 })
+    .toFile(join(outputDir, webp));
 
-unlinkSync(input);
-renameSync(tempJpg, input);
+  if (jpeg) {
+    await sharp(source)
+      .rotate()
+      .resize(width, width, { fit: 'cover', position: 'centre' })
+      .jpeg({ quality: 82, mozjpeg: true })
+      .toFile(join(outputDir, jpeg));
+  }
+}
 
-await sharp(input)
-  .webp({ quality: 82 })
-  .toFile(join(outputDir, 'profile.webp'));
-
-for (const file of ['profile.jpg', 'profile.webp']) {
+const files = ['profile-320.webp', 'profile-640.webp', 'profile-320.jpg', 'profile.jpg'];
+for (const file of files) {
   const { size } = statSync(join(outputDir, file));
   console.log(`${file}: ${(size / 1024).toFixed(1)} KiB`);
 }

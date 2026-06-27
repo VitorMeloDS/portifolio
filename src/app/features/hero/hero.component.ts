@@ -83,9 +83,15 @@ import { IconComponent } from '../../shared/components/icon/icon.component';
             <div class="gradient-ring shrink-0">
               <div class="overflow-hidden rounded-full bg-[var(--surface)] p-1">
                 <picture>
-                  <source srcset="assets/images/profile.webp" type="image/webp" />
+                  <source
+                    type="image/webp"
+                    srcset="assets/images/profile-320.webp 320w, assets/images/profile-640.webp 640w"
+                    sizes="(min-width: 1024px) 320px, (min-width: 640px) 288px, 256px"
+                  />
                   <img
-                    src="assets/images/profile.jpg"
+                    src="assets/images/profile-320.jpg"
+                    srcset="assets/images/profile-320.jpg 320w, assets/images/profile.jpg 640w"
+                    sizes="(min-width: 1024px) 320px, (min-width: 640px) 288px, 256px"
                     alt="Foto de Vitor Melo da Silva"
                     width="320"
                     height="320"

@@ -33,14 +33,42 @@ import { ScrollSpyService } from '../../core/services/scroll-spy.service';
     <app-header />
     <main>
       <app-hero />
-      <app-about />
-      <app-skills />
-      <app-projects />
-      <app-experience />
-      <app-education />
-      <app-contact />
+      @defer (on viewport) {
+        <app-about />
+      } @placeholder {
+        <div class="defer-slot" aria-hidden="true"></div>
+      }
+      @defer (on viewport) {
+        <app-skills />
+      } @placeholder {
+        <div class="defer-slot" aria-hidden="true"></div>
+      }
+      @defer (on viewport) {
+        <app-projects />
+      } @placeholder {
+        <div class="defer-slot" aria-hidden="true"></div>
+      }
+      @defer (on viewport) {
+        <app-experience />
+      } @placeholder {
+        <div class="defer-slot" aria-hidden="true"></div>
+      }
+      @defer (on viewport) {
+        <app-education />
+      } @placeholder {
+        <div class="defer-slot" aria-hidden="true"></div>
+      }
+      @defer (on viewport) {
+        <app-contact />
+      } @placeholder {
+        <div class="defer-slot" aria-hidden="true"></div>
+      }
     </main>
-    <app-footer />
+    @defer (on viewport) {
+      <app-footer />
+    } @placeholder {
+      <div class="defer-slot defer-slot--compact" aria-hidden="true"></div>
+    }
     <app-scroll-top />
   `,
 })

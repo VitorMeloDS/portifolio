@@ -17,7 +17,7 @@ export class App implements OnInit {
       title: PORTFOLIO_DATA.personal.name,
       description: PORTFOLIO_DATA.personal.summary,
       url: `${SITE_URL}/`,
-      image: `${SITE_URL}/assets/images/profile.webp`,
+      image: `${SITE_URL}/assets/images/profile-640.webp`,
     });
   }
 }

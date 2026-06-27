@@ -7,6 +7,7 @@
     "build": "ng build",
     "generate:favicon": "node scripts/generate-favicon.mjs",
     "optimize:profile": "node scripts/optimize-profile.mjs",
+    "copy:fonts": "node scripts/copy-fonts.mjs",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -30,6 +31,8 @@
     "@angular/build": "^22.0.4",
     "@angular/cli": "^22.0.4",
     "@angular/compiler-cli": "^22.0.0",
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/jetbrains-mono": "^5.2.8",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.7.0",
     "karma": "~6.4.0",

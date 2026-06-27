@@ -1,6 +1,52 @@
 @use 'tailwindcss';
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url('/fonts/inter-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: optional;
+  src: url('/fonts/inter-latin-600-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: optional;
+  src: url('/fonts/inter-latin-700-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: optional;
+  src: url('/fonts/inter-latin-800-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url('/fonts/jetbrains-mono-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: optional;
+  src: url('/fonts/jetbrains-mono-latin-500-normal.woff2') format('woff2');
+}
 
 :root {
   --accent-primary: #8b5cf6;
@@ -287,6 +333,14 @@ body {
   max-width: 72rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+.defer-slot {
+  min-height: 1px;
+}
+
+.defer-slot--compact {
+  min-height: 1px;
 }
 
 ::-webkit-scrollbar {

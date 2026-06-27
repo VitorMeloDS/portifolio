@@ -30,17 +30,8 @@ export class RevealOnScrollDirective implements OnInit, OnDestroy {
 
     const delayMs = Math.min(Number(this.delay()) || 0, 250);
     element.style.setProperty('--reveal-delay', `${delayMs}ms`);
-
-    // Conteúdo acima da dobra: revela sem esconder primeiro (evita flash vazio no hero)
-    requestAnimationFrame(() => {
-      if (this.isInViewport(element)) {
-        this.reveal(element);
-        return;
-      }
-
-      this.renderer.addClass(element, 'reveal-hidden');
-      this.startObserver(element);
-    });
+    this.renderer.addClass(element, 'reveal-hidden');
+    this.startObserver(element);
   }
 
   ngOnDestroy(): void {
@@ -74,12 +65,6 @@ export class RevealOnScrollDirective implements OnInit, OnDestroy {
 
     this.renderer.removeClass(element, 'reveal-hidden');
     this.renderer.addClass(element, 'reveal-visible');
-  }
-
-  private isInViewport(element: HTMLElement): boolean {
-    const rect = element.getBoundingClientRect();
-    const viewHeight = window.innerHeight || document.documentElement.clientHeight;
-    return rect.top < viewHeight * 0.92 && rect.bottom > 0;
   }
 
   private prefersReducedMotion(): boolean {
