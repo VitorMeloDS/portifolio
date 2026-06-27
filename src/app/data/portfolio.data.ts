@@ -18,14 +18,14 @@ export const PORTFOLIO_DATA: PortfolioData = {
     name: 'Vitor Melo da Silva',
     title: 'Desenvolvedor Full Stack Pleno | Tech Lead',
     location: 'Maceió, AL',
-    email: 'vmsvitor20@gmail.com',
+    email: 'vmsvitordev@gmail.com',
     summary:
       'Desenvolvedor Full Stack com mais de 4 anos de experiência em aplicações web, APIs robustas e liderança técnica. Especialista em ecossistemas modernos com foco em qualidade, DevSecOps e automação.',
     highlights: ['Tech Lead', 'APIs REST', 'Testes automatizados', 'Docker', 'CI/CD'],
     socialLinks: [
       { name: 'LinkedIn', url: 'https://www.linkedin.com/in/vitor-melo-ds/', icon: 'linkedin' },
       { name: 'GitHub', url: GITHUB_URL, icon: 'github' },
-      { name: 'E-mail', url: 'mailto:vmsvitor20@gmail.com', icon: 'mail' },
+      { name: 'E-mail', url: 'mailto:vmsvitordev@gmail.com', icon: 'mail' },
       { name: 'Website', url: SITE_URL, icon: 'globe' },
     ],
     resume: {
@@ -214,7 +214,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
     { id: 'ifal-connect', name: 'Connect tech', issuer: 'IFAL', issuedAt: 'Out 2023' },
   ],
   contactLinks: [
-    { id: 'email', label: 'E-mail', value: 'vmsvitor20@gmail.com', url: 'mailto:vmsvitor20@gmail.com', icon: 'mail', action: 'copy' },
+    { id: 'email', label: 'E-mail', value: 'vmsvitordev@gmail.com', url: 'mailto:vmsvitordev@gmail.com', icon: 'mail', action: 'copy' },
     { id: 'linkedin', label: 'LinkedIn', value: '@vitor-melo-ds', url: 'https://www.linkedin.com/in/vitor-melo-ds/', icon: 'linkedin', action: 'link' },
     { id: 'github', label: 'GitHub', value: '@VitorMeloDS', url: GITHUB_URL, icon: 'github', action: 'link' },
     { id: 'website', label: 'Website', value: 'vmsvitor.code-byte.com', url: SITE_URL, icon: 'globe', action: 'link' },

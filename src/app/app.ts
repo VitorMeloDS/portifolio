@@ -16,7 +16,8 @@ export class App implements OnInit {
     this.seo.update({
       title: PORTFOLIO_DATA.personal.name,
       description: PORTFOLIO_DATA.personal.summary,
-      url: SITE_URL,
+      url: `${SITE_URL}/`,
+      image: `${SITE_URL}/apple-touch-icon.png`,
     });
   }
 }
