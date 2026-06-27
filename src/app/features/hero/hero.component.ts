@@ -80,16 +80,20 @@ import { IconComponent } from '../../shared/components/icon/icon.component';
           </div>
 
           <div class="hero-photo flex justify-center lg:justify-end">
-            <div class="gradient-ring">
+            <div class="gradient-ring shrink-0">
               <div class="overflow-hidden rounded-full bg-[var(--surface)] p-1">
-                <img
-                  src="assets/images/profile.jpg"
-                  alt="Foto de Vitor Melo da Silva"
-                  width="320"
-                  height="320"
-                  class="h-64 w-64 rounded-full object-cover sm:h-72 sm:w-72 lg:h-80 lg:w-80"
-                  loading="eager"
-                />
+                <picture>
+                  <source srcset="assets/images/profile.webp" type="image/webp" />
+                  <img
+                    src="assets/images/profile.jpg"
+                    alt="Foto de Vitor Melo da Silva"
+                    width="320"
+                    height="320"
+                    fetchpriority="high"
+                    decoding="async"
+                    class="block h-64 w-64 rounded-full object-cover sm:h-72 sm:w-72 lg:h-80 lg:w-80"
+                  />
+                </picture>
               </div>
             </div>
           </div>
@@ -98,16 +102,41 @@ import { IconComponent } from '../../shared/components/icon/icon.component';
     </section>
   `,
   styles: `
-    .hero-content,
-    .hero-photo {
-      animation: heroFadeIn 0.7s ease both;
+    .hero-content {
+      animation: heroSlideIn 0.7s ease both;
     }
 
     .hero-photo {
+      animation: heroFadeIn 0.7s ease both;
       animation-delay: 0.12s;
+      min-width: 16rem;
+      min-height: 16rem;
+    }
+
+    @media (min-width: 640px) {
+      .hero-photo {
+        min-width: 18rem;
+        min-height: 18rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-photo {
+        min-width: 20rem;
+        min-height: 20rem;
+      }
     }
 
     @keyframes heroFadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes heroSlideIn {
       from {
         opacity: 0;
         transform: translate3d(0, 16px, 0);

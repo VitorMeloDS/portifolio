@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "generate:favicon": "node scripts/generate-favicon.mjs",
+    "optimize:profile": "node scripts/optimize-profile.mjs",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
