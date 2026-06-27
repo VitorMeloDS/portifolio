@@ -1,5 +1,8 @@
 import { PortfolioData } from '../core/models/portfolio.models';
 
+export const SITE_URL = 'https://vmsvitor.code-byte.com';
+export const GITHUB_URL = 'https://github.com/VitorMeloDS';
+
 export const NAVIGATION = [
   { id: 'hero', label: 'Início' },
   { id: 'about', label: 'Sobre' },
@@ -21,9 +24,9 @@ export const PORTFOLIO_DATA: PortfolioData = {
     highlights: ['Tech Lead', 'APIs REST', 'Testes automatizados', 'Docker', 'CI/CD'],
     socialLinks: [
       { name: 'LinkedIn', url: 'https://www.linkedin.com/in/vitor-melo-ds/', icon: 'linkedin' },
-      { name: 'GitHub', url: 'https://github.com/VitorMeloDS', icon: 'github' },
+      { name: 'GitHub', url: GITHUB_URL, icon: 'github' },
       { name: 'E-mail', url: 'mailto:vmsvitor20@gmail.com', icon: 'mail' },
-      { name: 'Website', url: 'https://www.sitebacana.com.br', icon: 'globe' },
+      { name: 'Website', url: SITE_URL, icon: 'globe' },
     ],
     resume: {
       url: 'Curriculo_Vitor_Melo.pdf',
@@ -213,8 +216,8 @@ export const PORTFOLIO_DATA: PortfolioData = {
   contactLinks: [
     { id: 'email', label: 'E-mail', value: 'vmsvitor20@gmail.com', url: 'mailto:vmsvitor20@gmail.com', icon: 'mail', action: 'copy' },
     { id: 'linkedin', label: 'LinkedIn', value: '@vitor-melo-ds', url: 'https://www.linkedin.com/in/vitor-melo-ds/', icon: 'linkedin', action: 'link' },
-    { id: 'github', label: 'GitHub', value: '@vitor-melo-ds', url: 'https://github.com/vitor-melo-ds', icon: 'github', action: 'link' },
-    { id: 'website', label: 'Website', value: 'sitebacana.com.br', url: 'https://www.sitebacana.com.br', icon: 'globe', action: 'link' },
+    { id: 'github', label: 'GitHub', value: '@VitorMeloDS', url: GITHUB_URL, icon: 'github', action: 'link' },
+    { id: 'website', label: 'Website', value: 'vmsvitor.code-byte.com', url: SITE_URL, icon: 'globe', action: 'link' },
   ],
   navigation: NAVIGATION,
 };

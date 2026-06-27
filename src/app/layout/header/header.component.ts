@@ -75,15 +75,14 @@ import { IconComponent } from '../../shared/components/icon/icon.component';
       </nav>
 
       @if (menuOpen()) {
-        <div class="glass mx-4 mt-2 rounded-2xl p-4 md:hidden">
+        <div class="mobile-nav-panel mx-4 mt-2 rounded-2xl p-4 md:hidden">
           <ul class="space-y-1">
             @for (item of navItems; track item.id) {
               <li>
                 <button
                   type="button"
-                  class="w-full rounded-lg px-4 py-3 text-left text-sm font-medium transition-colors"
-                  [class.bg-[var(--glass-bg)]]="scrollSpy.activeSection() === item.id"
-                  [class.text-[var(--accent-primary)]]="scrollSpy.activeSection() === item.id"
+                  class="mobile-nav-link w-full rounded-lg px-4 py-3 text-left text-sm font-medium transition-colors"
+                  [class.mobile-nav-link--active]="scrollSpy.activeSection() === item.id"
                   (click)="scrollTo(item.id); menuOpen.set(false)"
                 >
                   {{ item.label }}

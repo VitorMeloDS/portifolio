@@ -124,6 +124,25 @@ body {
   -webkit-backdrop-filter: blur(16px);
 }
 
+.mobile-nav-panel {
+  background: var(--surface-elevated);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.35);
+}
+
+.mobile-nav-link {
+  color: var(--text-primary);
+}
+
+.mobile-nav-link:hover {
+  background: var(--glass-bg);
+}
+
+.mobile-nav-link--active {
+  background: rgba(139, 92, 246, 0.15);
+  color: var(--accent-primary);
+}
+
 .glass-card {
   background: var(--glass-bg);
   backdrop-filter: blur(16px);

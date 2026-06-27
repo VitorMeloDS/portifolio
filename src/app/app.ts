@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 import { SeoService } from './core/services/seo.service';
-import { PORTFOLIO_DATA } from './data/portfolio.data';
+import { PORTFOLIO_DATA, SITE_URL } from './data/portfolio.data';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +16,7 @@ export class App implements OnInit {
     this.seo.update({
       title: PORTFOLIO_DATA.personal.name,
       description: PORTFOLIO_DATA.personal.summary,
-      url: 'https://www.sitebacana.com.br',
+      url: SITE_URL,
     });
   }
 }

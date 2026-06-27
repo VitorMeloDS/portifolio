@@ -71,4 +71,4 @@ O tema escuro é o padrão. O toggle no header alterna entre dark/light e persis
 
 ## Autor
 
-**Vitor Melo da Silva** — [LinkedIn](https://www.linkedin.com/in/vitor-melo-ds/) | [GitHub](https://github.com/vitor-melo-ds)
+**Vitor Melo da Silva** — [LinkedIn](https://www.linkedin.com/in/vitor-melo-ds/) | [GitHub](https://github.com/VitorMeloDS)
