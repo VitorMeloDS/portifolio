@@ -14,7 +14,9 @@ const pngBuffers = await Promise.all(
 );
 
 writeFileSync(join(publicDir, 'favicon.ico'), await pngToIco(pngBuffers));
+await sharp(svg).resize(48, 48).png().toFile(join(publicDir, 'favicon-48x48.png'));
+await sharp(svg).resize(96, 96).png().toFile(join(publicDir, 'favicon-96x96.png'));
 await sharp(svg).resize(180, 180).png().toFile(join(publicDir, 'apple-touch-icon.png'));
 await sharp(svg).resize(32, 32).png().toFile(join(publicDir, 'favicon-32x32.png'));
 
-console.log('Favicon gerado: favicon.ico, favicon.svg, apple-touch-icon.png');
+console.log('Favicon gerado: favicon.ico, favicon-48x48.png, favicon-96x96.png, favicon.svg, apple-touch-icon.png');
